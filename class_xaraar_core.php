@@ -80,7 +80,7 @@ if (!class_exists('Xaraar_Core')) {
         public function law_templates($single_template) {
             global $post;
             $single_path = dirname(__FILE__);
-            if (get_post_type() == 'xa_events') {
+            if (get_post_type() == 'law_events') {
                 if (is_single()) {
                     $single_template = plugin_dir_path(__FILE__) . '/templates/events-single.php';
                 }
