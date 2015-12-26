@@ -55,6 +55,24 @@ if (!class_exists('XA_CoreBase')) {
                     update_post_meta($post_id , 'xa_shortcode' , $data_shortcode); //exit;
                 }
             }
+            
+            if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+                return;
+            }
+
+            if (get_post_type() == 'law_events') {
+                if (isset($_POST['fw_options'])) {
+                    foreach ($_POST['fw_options'] as $key => $value) {
+                        if ($key == 'start_date') {
+                            $value = date('Y-m-d' , strtotime($value));
+                        } else if ($key == 'end_date') {
+                            $value = date('Y-m-d' , strtotime($value));
+                        }
+
+                        update_post_meta($post_id , $key , $value); //exit;
+                    }
+                }
+            }
         }
 
     }
