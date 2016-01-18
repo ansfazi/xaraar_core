@@ -25,14 +25,27 @@ if (!class_exists('Xaraar_Core')) {
             require_once('core/class-functions.php');
             require_once('core/post-types/sliders.php');
             require_once('shortcodes/class-slider.php');
+			require_once('hooks/hooks.php');
             
             //Post Type
             require_once('core/post-types/teams.php');
             require_once('core/post-types/events.php');
-
+			
+			//Enque Scripts
+			add_action('wp_enqueue_scripts', array(&$this, 'xa_enqueue_fronetend_scripts'));
+			
+			//Add Templates
             add_filter('template_include' , array (&$this , 'law_templates'));
         }
-
+		
+		/**
+		 * @Plugin Scripts
+		 * @return {}
+		 */
+		public function xa_enqueue_fronetend_scripts(){
+			wp_enqueue_script('xa_front_script', plugins_url( '/js/functions.js' , __FILE__ ), '', '', true);
+		}
+		
         /**
          *
          * @PLugin URl
