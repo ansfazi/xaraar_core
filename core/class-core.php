@@ -5,20 +5,20 @@
  * Core Base Class 
  *
  * @package   Law
- * @author    xaraar
- * @link      http://xaraar.com/
- * @copyright @2015 xaraar
+ * @author    themeheap
+ * @link      http://themeheap.com/
+ * @copyright @2015 themeheap
  * @version 1.0.0
  * @since 1.0
  */
-if (!class_exists('XA_CoreBase')) {
+if (!class_exists('Law_CoreBase')) {
 
-    class XA_CoreBase {
+    class Law_CoreBase {
 
         protected static $instance = null;
 
         public function __construct() {
-            add_action('save_post' , array ($this , 'xa_save_meta_data'));
+            add_action('save_post' , array ($this , 'law_firm_save_meta_data'));
         }
 
         /**
@@ -36,7 +36,7 @@ if (!class_exists('XA_CoreBase')) {
          * Save Meta options
          * @return 
          */
-        public function xa_save_meta_data($post_id = '') {
+        public function law_firm_save_meta_data($post_id = '') {
 
             if (!is_admin()) {
                 return;
@@ -46,13 +46,13 @@ if (!class_exists('XA_CoreBase')) {
                 return;
             }
 
-            if (get_post_type() == 'xa_slider') {
+            if (get_post_type() == 'law_slider') {
                 if (!function_exists('fw_get_db_post_option')) {
                     return;
                 }
-                $data_shortcode = '[xaraar_slider id="' . $post_id . '"]';
+                $data_shortcode = '[themeheap_slider id="' . $post_id . '"]';
                 if (isset($_POST['fw_options'])) {
-                    update_post_meta($post_id , 'xa_shortcode' , $data_shortcode); //exit;
+                    update_post_meta($post_id , 'law_shortcode' , $data_shortcode); //exit;
                 }
             }
             
@@ -77,5 +77,5 @@ if (!class_exists('XA_CoreBase')) {
 
     }
 
-    new XA_CoreBase();
+    new Law_CoreBase();
 }

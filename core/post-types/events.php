@@ -5,15 +5,15 @@
  * Events Post Type
  *
  * @package   Law
- * @author    xaraar
- * @link      http://xaraar.com/
- * @copyright @2015 xaraar
+ * @author    themeheap
+ * @link      http://themeheap.com/
+ * @copyright @2015 themeheap
  * @version 1.0.0
  * @since 1.0
  */
-if (!class_exists('XA_Events')) {
+if (!class_exists('Law_Events')) {
 
-    class XA_Events {
+    class Law_Events {
 
         public function __construct() {
             global $pagenow;
@@ -37,24 +37,24 @@ if (!class_exists('XA_Events')) {
          */
         public function prepare_post_type() {
             $labels = array (
-                               'name'               => __('Events' , 'core') ,
-                               'all_items'          => __('Events' , 'core') ,
-                               'singular_name'      => __('Events' , 'core') ,
-                               'add_new'            => __('Add Event' , 'core') ,
-                               'add_new_item'       => __('Add New Event' , 'core') ,
-                               'edit'               => __('Edit' , 'core') ,
-                               'edit_item'          => __('Edit Event' , 'core') ,
-                               'new_item'           => __('New Event' , 'core') ,
-                               'view'               => __('View Event' , 'core') ,
-                               'view_item'          => __('View Event' , 'core') ,
-                               'search_items'       => __('Search Event' , 'core') ,
-                               'not_found'          => __('No Event found' , 'core') ,
-                               'not_found_in_trash' => __('No Event found in trash' , 'core') ,
-                               'parent'             => __('Parent Event' , 'core') ,
+                               'name'               => esc_html__('Events' , 'law_core') ,
+                               'all_items'          => esc_html__('Events' , 'law_core') ,
+                               'singular_name'      => esc_html__('Events' , 'law_core') ,
+                               'add_new'            => esc_html__('Add Event' , 'law_core') ,
+                               'add_new_item'       => esc_html__('Add New Event' , 'law_core') ,
+                               'edit'               => esc_html__('Edit' , 'law_core') ,
+                               'edit_item'          => esc_html__('Edit Event' , 'law_core') ,
+                               'new_item'           => esc_html__('New Event' , 'law_core') ,
+                               'view'               => esc_html__('View Event' , 'law_core') ,
+                               'view_item'          => esc_html__('View Event' , 'law_core') ,
+                               'search_items'       => esc_html__('Search Event' , 'law_core') ,
+                               'not_found'          => esc_html__('No Event found' , 'law_core') ,
+                               'not_found_in_trash' => esc_html__('No Event found in trash' , 'law_core') ,
+                               'parent'             => esc_html__('Parent Event' , 'law_core') ,
             );
             $args   = array (
                                'labels'              => $labels ,
-                               'description'         => __('This is where you can add new Event' , 'core') ,
+                               'description'         => esc_html__('This is where you can add new Event' , 'law_core') ,
                                'public'              => true ,
                                'supports'            => array ('title' , 'thumbnail' , 'editor','comments') ,
                                'show_ui'             => true ,
@@ -77,17 +77,17 @@ if (!class_exists('XA_Events')) {
          */
         public function init_event_taxonomies() {
             $labels = array (
-                               'name'              => _x('Categories' , 'taxonomy general name' , 'himalayan') ,
-                               'singular_name'     => _x('Category' , 'taxonomy singular name' , 'himalayan') ,
-                               'search_items'      => __('Search Categories' , 'himalayan') ,
-                               'all_items'         => __('All Categories' , 'himalayan') ,
-                               'parent_item'       => __('Parent Category' , 'himalayan') ,
-                               'parent_item_colon' => __('Parent Category:' , 'himalayan') ,
-                               'edit_item'         => __('Edit Category' , 'himalayan') ,
-                               'update_item'       => __('Update Category' , 'himalayan') ,
-                               'add_new_item'      => __('Add New Category' , 'himalayan') ,
-                               'new_item_name'     => __('New Category Name' , 'himalayan') ,
-                               'menu_name'         => __('Categories' , 'himalayan') ,
+                               'name'              => _x('Categories' , 'taxonomy general name' , 'law_core') ,
+                               'singular_name'     => _x('Category' , 'taxonomy singular name' , 'law_core') ,
+                               'search_items'      => esc_html__('Search Categories' , 'law_core') ,
+                               'all_items'         => esc_html__('All Categories' , 'law_core') ,
+                               'parent_item'       => esc_html__('Parent Category' , 'law_core') ,
+                               'parent_item_colon' => esc_html__('Parent Category:' , 'law_core') ,
+                               'edit_item'         => esc_html__('Edit Category' , 'law_core') ,
+                               'update_item'       => esc_html__('Update Category' , 'law_core') ,
+                               'add_new_item'      => esc_html__('Add New Category' , 'law_core') ,
+                               'new_item_name'     => esc_html__('New Category Name' , 'law_core') ,
+                               'menu_name'         => esc_html__('Categories' , 'law_core') ,
             );
 
             $args = array (
@@ -108,8 +108,8 @@ if (!class_exists('XA_Events')) {
          */
         public function events_columns_add($columns) {
             unset($columns['date']);
-            $columns['location'] = __('Location' , 'core');
-            $columns['dates']    = __('Start Date / End Date' , 'core');
+            $columns['location'] = esc_html__('Location' , 'law_core');
+            $columns['dates']    = esc_html__('Start Date / End Date' , 'law_core');
 
             return $columns;
         }
@@ -138,5 +138,5 @@ if (!class_exists('XA_Events')) {
 
     }
 
-    new XA_Events();
+    new Law_Events();
 }

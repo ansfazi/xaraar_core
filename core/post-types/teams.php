@@ -5,15 +5,15 @@
  * Teams Post Type
  *
  * @package   Law
- * @author    xaraar
- * @link      http://xaraar.com/
- * @copyright @2015 xaraar
+ * @author    themeheap
+ * @link      http://themeheap.com/
+ * @copyright @2015 themeheap
  * @version 1.0.0
  * @since 1.0
  */
-if (!class_exists('XA_Teams')) {
+if (!class_exists('Law_Teams')) {
 
-    class XA_Teams {
+    class Law_Teams {
 
         public function __construct() {
             global $pagenow;
@@ -37,24 +37,24 @@ if (!class_exists('XA_Teams')) {
          */
         public function prepare_post_type() {
             $labels = array (
-                               'name'               => __('Teams' , 'core') ,
-                               'all_items'          => __('Teams' , 'core') ,
-                               'singular_name'      => __('Teams' , 'core') ,
-                               'add_new'            => __('Add Team' , 'core') ,
-                               'add_new_item'       => __('Add New Team' , 'core') ,
-                               'edit'               => __('Edit' , 'core') ,
-                               'edit_item'          => __('Edit Team' , 'core') ,
-                               'new_item'           => __('New Team' , 'core') ,
-                               'view'               => __('View Team' , 'core') ,
-                               'view_item'          => __('View Team' , 'core') ,
-                               'search_items'       => __('Search Team' , 'core') ,
-                               'not_found'          => __('No Team found' , 'core') ,
-                               'not_found_in_trash' => __('No Team found in trash' , 'core') ,
-                               'parent'             => __('Parent Team' , 'core') ,
+                               'name'               => esc_html__('Teams' , 'law_core') ,
+                               'all_items'          => esc_html__('Teams' , 'law_core') ,
+                               'singular_name'      => esc_html__('Teams' , 'law_core') ,
+                               'add_new'            => esc_html__('Add Team' , 'law_core') ,
+                               'add_new_item'       => esc_html__('Add New Team' , 'law_core') ,
+                               'edit'               => esc_html__('Edit' , 'law_core') ,
+                               'edit_item'          => esc_html__('Edit Team' , 'law_core') ,
+                               'new_item'           => esc_html__('New Team' , 'law_core') ,
+                               'view'               => esc_html__('View Team' , 'law_core') ,
+                               'view_item'          => esc_html__('View Team' , 'law_core') ,
+                               'search_items'       => esc_html__('Search Team' , 'law_core') ,
+                               'not_found'          => esc_html__('No Team found' , 'law_core') ,
+                               'not_found_in_trash' => esc_html__('No Team found in trash' , 'law_core') ,
+                               'parent'             => esc_html__('Parent Team' , 'law_core') ,
             );
             $args   = array (
                                'labels'              => $labels ,
-                               'description'         => __('This is where you can add new Team' , 'core') ,
+                               'description'         => esc_html__('This is where you can add new Team' , 'law_core') ,
                                'public'              => true ,
                                'supports'            => array ('title' , 'thumbnail' , 'editor') ,
                                'show_ui'             => true ,
@@ -77,17 +77,17 @@ if (!class_exists('XA_Teams')) {
          */
         public function init_team_taxonomies() {
             $labels = array (
-                               'name'              => _x('Categories' , 'taxonomy general name' , 'himalayan') ,
-                               'singular_name'     => _x('Category' , 'taxonomy singular name' , 'himalayan') ,
-                               'search_items'      => __('Search Categories' , 'himalayan') ,
-                               'all_items'         => __('All Categories' , 'himalayan') ,
-                               'parent_item'       => __('Parent Category' , 'himalayan') ,
-                               'parent_item_colon' => __('Parent Category:' , 'himalayan') ,
-                               'edit_item'         => __('Edit Category' , 'himalayan') ,
-                               'update_item'       => __('Update Category' , 'himalayan') ,
-                               'add_new_item'      => __('Add New Category' , 'himalayan') ,
-                               'new_item_name'     => __('New Category Name' , 'himalayan') ,
-                               'menu_name'         => __('Categories' , 'himalayan') ,
+                               'name'              => _x('Categories' , 'taxonomy general name' , 'law_core') ,
+                               'singular_name'     => _x('Category' , 'taxonomy singular name' , 'law_core') ,
+                               'search_items'      => esc_html__('Search Categories' , 'law_core') ,
+                               'all_items'         => esc_html__('All Categories' , 'law_core') ,
+                               'parent_item'       => esc_html__('Parent Category' , 'law_core') ,
+                               'parent_item_colon' => esc_html__('Parent Category:' , 'law_core') ,
+                               'edit_item'         => esc_html__('Edit Category' , 'law_core') ,
+                               'update_item'       => esc_html__('Update Category' , 'law_core') ,
+                               'add_new_item'      => esc_html__('Add New Category' , 'law_core') ,
+                               'new_item_name'     => esc_html__('New Category Name' , 'law_core') ,
+                               'menu_name'         => esc_html__('Categories' , 'law_core') ,
             );
 
             $args = array (
@@ -108,8 +108,8 @@ if (!class_exists('XA_Teams')) {
          */
         public function teams_columns_add($columns) {
             unset($columns['date']);
-            $columns['email'] = __('Email' , 'core');
-            $columns['phone']    = __('Phone' , 'core');
+            $columns['email'] = esc_html__('Email' , 'law_core');
+            $columns['phone']    = esc_html__('Phone' , 'law_core');
 
             return $columns;
         }
@@ -138,5 +138,5 @@ if (!class_exists('XA_Teams')) {
 
     }
 
-    new XA_Teams();
+    new Law_Teams();
 }

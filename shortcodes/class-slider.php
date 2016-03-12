@@ -2,12 +2,12 @@
 /**
  * File Type: Slider
  */
-if (!class_exists('SC_Slider')) {
+if (!class_exists('SC_Law_Firm_Slider')) {
 
-    class SC_Slider {
+    class SC_Law_Firm_Slider {
 
         public function __construct() {
-            add_shortcode('xaraar_slider' , array (&$this , 'shortCodeCallBack'));
+            add_shortcode('themeheap_slider' , array (&$this , 'shortCodeCallBack'));
         }
 
         /**
@@ -17,9 +17,9 @@ if (!class_exists('SC_Slider')) {
         public function shortCodeCallBack($args , $content = '') {
             if (isset($args['id']) && !empty($args['id'])) {
                 if (function_exists('fw_get_db_settings_option')) {
-                    $this->xa_prepare_carousel($args['id']);
+                    $this->law_firm_prepare_carousel($args['id']);
                 } else {
-                    _e('Oops! No data Found' , 'Fashioner');
+                    esc_html_e('Oops! No data Found' , 'Law');
                 }
             }
         }
@@ -28,10 +28,10 @@ if (!class_exists('SC_Slider')) {
          * @Carousel Slider
          * @return {HTML}
          * */
-        public function xa_prepare_carousel($id = '') {
+        public function law_firm_prepare_carousel($id = '') {
 			$slider_type    = fw_get_db_post_option($id , 'slider_type' , true);
             
-			if( isset( $slider_type ) && $slider_type == 'v2' ){
+			if( isset( $slider_type['gadget'] ) && $slider_type['gadget'] == 'slider_v2' ){
 				$this->prepare_slider_version_v2($id);
 			} else{
 				$this->prepare_slider_version_v1($id);
@@ -48,24 +48,43 @@ if (!class_exists('SC_Slider')) {
             $margin_bottom = fw_get_db_post_option($id , 'margin_bottom' , true);
             $pagination    = fw_get_db_post_option($id , 'pagination' , true);
             $auto          = fw_get_db_post_option($id , 'auto' , true);
-            $slides        = fw_get_db_post_option($id , 'slides' , true);
-            $flag = fw_unique_increment();
+			$slider_speed          = fw_get_db_post_option($id , 'slider_speed' , true);
+            $slider_type        = fw_get_db_post_option($id , 'slider_type' , true);
+            $flag 		  = fw_unique_increment();
             
-            $enable = 'false';
-            if( isset( $auto ) && $auto == 'enable' ){
-                $enable = 'true';
-            }
-            if (isset($slides) && is_array($slides) && !empty($slides)) {
+
+			$autoPlay	= 'true';
+			if( isset( $auto ) && $auto == 'disable' ) {
+			 	 $autoPlay	= 'false';
+			}
+			 
+			$navigation	= 'true';
+			if( isset( $pagination ) && $pagination == 'disable' ) {
+			 	 $navigation	= 'false';
+			}
+			 
+            $css	= array();
+			if( isset( $margin_top ) && !empty(  $margin_top ) ){
+			 	$css[]	= 'margin-top:'.$margin_top.'px;';
+			}
+			 
+			if( isset( $margin_bottom ) && !empty(  $margin_bottom ) ){
+			 	$css[]	= 'margin-bottom:'.$margin_bottom.'px;';
+			}
+			 
+            if ( isset($slider_type['slider_v1']['slides']) && is_array($slider_type['slider_v1']['slides']) && !empty($slider_type['slider_v1']['slides']) ) {
+			$slides	= $slider_type['slider_v1']['slides'];
+			
             ?>
-            <div class="main-gallery beans-gallery">
+            <div class="main-gallery beans-gallery system-banner-<?php echo esc_attr( $flag );?>" style="<?php echo implode(' ', $css );?>">
                 <div class="beans-mask">
                     <div class="beans-slideset">
-                        <?php
-                        foreach ($slides as $key => $slide) {
-                            $slider_title   = $slide['slider_title'];
-                            $logo   = $slide['logo'];
-                            if (isset($slide['slider_bg_image']['url']) && !empty($slide['slider_bg_image']['url'])) {
-                                ?>    
+					<?php
+                    foreach ($slides as $key => $slide) {
+                        $slider_title   = $slide['slider_title'];
+                        $logo   = $slide['logo'];
+                        if (isset($slide['slider_bg_image']['url']) && !empty($slide['slider_bg_image']['url'])) {
+                            ?>    
                         <div class="beans-slide win-height">
                             <?php if( !empty($logo) || !empty($slider_title) ) {?>
                             <div class="container">
@@ -73,7 +92,7 @@ if (!class_exists('SC_Slider')) {
                                     <div class="col-xs-12 slide-content  win-min-height">
                                         <header class="slide-heading2">
                                             <?php if( isset($logo['url']) && !empty($logo['url']) ) {?>
-                                            <img src="<?php echo esc_url( $logo['url'] );?>" class="img-slider" title="<?php echo force_balance_tags( $slide['slider_title'] );?>" />
+                                            <img src="<?php echo esc_url( $logo['url'] );?>" class="img-slider" title="<?php echo esc_attr( $slide['slider_title'] );?>" alt="<?php echo esc_attr( $slide['slider_title'] );?>" />
                                             <?php }?>
                                             <?php if( isset($slider_title) && !empty($slider_title) ) {?>
                                             	<h1><?php echo esc_attr( $slider_title );?></h1>
@@ -84,7 +103,7 @@ if (!class_exists('SC_Slider')) {
                             </div>
                             <?php }?>
                             <div class="bg-stretch">
-                                <img src="<?php echo esc_url( $slide['slider_bg_image']['url'] );?>" title="<?php echo force_balance_tags( $slide['slider_title'] );?>" />
+                                <img src="<?php echo esc_url( $slide['slider_bg_image']['url'] );?>" title="<?php echo esc_attr( $slide['slider_title'] );?>" alt="<?php echo esc_attr( $slide['slider_title'] );?>" />
                             </div>
                         </div>
                         <?php }
@@ -98,6 +117,24 @@ if (!class_exists('SC_Slider')) {
                     </div>
                 <?php }?>
             </div>
+            <script>
+				jQuery(document).ready(function(e) {
+                  	jQuery('.system-banner-<?php echo esc_js( $flag );?>').scrollAbsoluteGallery({
+						mask: '.beans-mask',
+						slider: '.beans-slideset',
+						slides: '.beans-slide',
+						btnPrev: 'a.btn-prev',
+						btnNext: 'a.btn-next',
+						pagerLinks: '.beans-pagination',
+						stretchSlideToMask: true,
+						pauseOnHover: true,
+						maskAutoSize: true,
+						autoRotation: <?php echo esc_js( $autoPlay );?>,
+						switchTime: 3000,
+						animSpeed: <?php echo esc_js( $slider_speed );?>
+				  });  
+                });
+			</script>
             <?php
 
             }
@@ -112,17 +149,35 @@ if (!class_exists('SC_Slider')) {
             $margin_bottom = fw_get_db_post_option($id , 'margin_bottom' , true);
             $pagination    = fw_get_db_post_option($id , 'pagination' , true);
             $auto          = fw_get_db_post_option($id , 'auto' , true);
-            $slides        = fw_get_db_post_option($id , 'slides_v2' , true);
-            $flag = fw_unique_increment();
+			$slider_speed          = fw_get_db_post_option($id , 'slider_speed' , true);
+            $slider_type        = fw_get_db_post_option($id , 'slider_type' , true);
+            $flag 		  = fw_unique_increment();
             
-            $enable = 'false';
-            if( isset( $auto ) && $auto == 'enable' ){
-                $enable = 'true';
-            }
-            if (isset($slides) && is_array($slides) && !empty($slides)) {
+			//fw_print($slider_type);
+			$autoPlay	= 'true';
+			if( isset( $auto ) && $auto == 'disable' ) {
+			 	 $autoPlay	= 'false';
+			}
+			 
+			$navigation	= 'true';
+			if( isset( $pagination ) && $pagination == 'disable' ) {
+			 	 $navigation	= 'false';
+			}
+			 
+            $css	= array();
+			if( isset( $margin_top ) && !empty(  $margin_top ) ){
+			 	$css[]	= 'margin-top:'.$margin_top.'px;';
+			}
+			 
+			if( isset( $margin_bottom ) && !empty(  $margin_bottom ) ){
+			 	$css[]	= 'margin-bottom:'.$margin_bottom.'px;';
+			}
+			 
+            if ( isset($slider_type['slider_v2']['slides']) && is_array($slider_type['slider_v2']['slides']) && !empty($slider_type['slider_v2']['slides']) ) {
+			$slides	= $slider_type['slider_v2']['slides'];
             ?>
-            <div class="system-slider">
-             <div class="beans-gallery main-slider">
+            <div class="system-slider main-gallery" style="<?php echo implode(' ', $css );?>">
+             <div class="beans-gallery main-slider system-banner-<?php echo esc_js( $flag );?>">
               <div class="beans-mask">
                 <div class="beans-slideset">
                     <?php
@@ -140,7 +195,7 @@ if (!class_exists('SC_Slider')) {
                                         <div class="col-xs-12 slide-content  win-height">
                                             <?php if( isset($logo['url']) && !empty($logo['url']) ) {?>
                                             <div class="alignleft">
-                                               <img src="<?php echo esc_url( $logo['url'] );?>" title="<?php echo force_balance_tags( $slide['slider_title'] );?>" />
+                                               <img src="<?php echo esc_url( $logo['url'] );?>" title="<?php echo esc_attr( $slide['slider_title'] );?>"  alt="<?php echo esc_attr( $slide['slider_title'] );?>" />
                                             </div>
                                             <?php }?>
                                             <header class="slide-heading">
@@ -158,20 +213,38 @@ if (!class_exists('SC_Slider')) {
                                     </div>
                                 </div>
                                 <div class="bg-stretch">
-                                     <img src="<?php echo esc_url( $slide['slider_bg_image']['url'] );?>" title="<?php echo force_balance_tags( $slide['slider_title'] );?>" />
+                                     <img src="<?php echo esc_url( $slide['slider_bg_image']['url'] );?>" title="<?php echo esc_attr( $slide['slider_title'] );?>" alt="<?php echo esc_attr( $slide['slider_title'] );?>" />
                                 </div>
                             </div>
                          <?php }
                     } ?>
                   </div>
                 </div>
-              <?php if( isset($pagination) && $pagination == 'enable' ) {?>
-                <div class="btn-box">
-                    <a class="btn-prev" href="javascript:;"><i class="fa fa-angle-left"></i></a>
-                    <a class="btn-next" href="javascript:;"><i class="fa fa-angle-right"></i></a>
-                </div>
+               <?php if( isset($pagination) && $pagination == 'enable' ) {?>
+                    <div class="btn-box">
+                        <a class="btn-prev" href="javascript:;"><i class="fa fa-angle-left"></i></a>
+                        <a class="btn-next" href="javascript:;"><i class="fa fa-angle-right"></i></a>
+                    </div>
                <?php }?>
              </div>
+             <script>
+				jQuery(document).ready(function(e) {
+                  	jQuery('.system-banner-<?php echo esc_js( $flag );?>').scrollAbsoluteGallery({
+						mask: '.beans-mask',
+						slider: '.beans-slideset',
+						slides: '.beans-slide',
+						btnPrev: 'a.btn-prev',
+						btnNext: 'a.btn-next',
+						pagerLinks: '.beans-pagination',
+						stretchSlideToMask: true,
+						pauseOnHover: true,
+						maskAutoSize: true,
+						autoRotation: <?php echo esc_js( $autoPlay );?>,
+						switchTime: 3000,
+						animSpeed: <?php echo esc_js( $slider_speed );?>
+					});
+				  });  
+			</script>
             </div>
             <?php
 
@@ -179,5 +252,5 @@ if (!class_exists('SC_Slider')) {
         }
     }
 
-    new SC_Slider();
+    new SC_Law_Firm_Slider();
 }

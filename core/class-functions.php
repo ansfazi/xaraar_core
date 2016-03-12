@@ -4,15 +4,15 @@
  * Functions
  *
  * @package   Law
- * @author    xaraar
- * @link      http://xaraar.com/
- * @copyright @2015 xaraar
+ * @author    themeheap
+ * @link      http://themeheap.com/
+ * @copyright @2015 themeheap
  * @version 1.0.0
  * @since 1.0
  */
-if( ! class_exists('XA_PluginFunction') ) {
+if( ! class_exists('Law_PluginFunction') ) {
 	
-	class XA_PluginFunction {
+	class Law_PluginFunction {
 		
 		protected static $instance = null;
 		 
@@ -22,5 +22,5 @@ if( ! class_exists('XA_PluginFunction') ) {
 	
 	}
 	
-  	new XA_PluginFunction();	
+  	new Law_PluginFunction();	
 }

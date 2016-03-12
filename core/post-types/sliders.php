@@ -4,21 +4,21 @@
  * Slider Post Type
  *
  * @package   Law
- * @author    xaraar
- * @link      http://xaraar.com/
- * @copyright @2015 xaraar
+ * @author    themeheap
+ * @link      http://themeheap.com/
+ * @copyright @2015 themeheap
  * @version 1.0.0
  * @since 1.0
  */
-if( ! class_exists('XA_Slider') ) {
+if( ! class_exists('Law_Slider') ) {
 	
-	class XA_Slider {
+	class Law_Slider {
 	
 		public function __construct() {
 			global $pagenow;
 			add_action('init', array(&$this, 'init_slider'));
-			add_filter('manage_xa_slider_posts_columns', array(&$this, 'sliders_columns_add'));
-			add_action('manage_xa_slider_posts_custom_column', array(&$this, 'sliders_columns'),10, 2);						
+			add_filter('manage_law_slider_posts_columns', array(&$this, 'sliders_columns_add'));
+			add_action('manage_law_slider_posts_custom_column', array(&$this, 'sliders_columns'),10, 2);						
 		}
 		
 		/**
@@ -35,24 +35,24 @@ if( ! class_exists('XA_Slider') ) {
 		 */
 		public function prepare_post_type(){
 			$labels = array(
-				'name' 				 => __( 'LAW Sliders', 'core' ),
-				'all_items'			 => __( 'Sliders', 'core' ),
-				'singular_name'      => __( 'Sliders', 'core' ),
-				'add_new'            => __( 'Add Slider', 'core' ),
-				'add_new_item'       => __( 'Add New Slider', 'core' ),
-				'edit'               => __( 'Edit', 'core' ),
-				'edit_item'          => __( 'Edit Slider', 'core' ),
-				'new_item'           => __( 'New Slider', 'core' ),
-				'view'               => __( 'View Slider', 'core' ),
-				'view_item'          => __( 'View Slider', 'core' ),
-				'search_items'       => __( 'Search Slider', 'core' ),
-				'not_found'          => __( 'No Slider found', 'core' ),
-				'not_found_in_trash' => __( 'No Slider found in trash', 'core' ),
-				'parent'             => __( 'Parent Slider', 'core' ),
+				'name' 				 => esc_html__( 'Sliders', 'law_core' ),
+				'all_items'			 => esc_html__( 'Sliders', 'law_core' ),
+				'singular_name'      => esc_html__( 'Sliders', 'law_core' ),
+				'add_new'            => esc_html__( 'Add Slider', 'law_core' ),
+				'add_new_item'       => esc_html__( 'Add New Slider', 'law_core' ),
+				'edit'               => esc_html__( 'Edit', 'law_core' ),
+				'edit_item'          => esc_html__( 'Edit Slider', 'law_core' ),
+				'new_item'           => esc_html__( 'New Slider', 'law_core' ),
+				'view'               => esc_html__( 'View Slider', 'law_core' ),
+				'view_item'          => esc_html__( 'View Slider', 'law_core' ),
+				'search_items'       => esc_html__( 'Search Slider', 'law_core' ),
+				'not_found'          => esc_html__( 'No Slider found', 'law_core' ),
+				'not_found_in_trash' => esc_html__( 'No Slider found in trash', 'law_core' ),
+				'parent'             => esc_html__( 'Parent Slider', 'law_core' ),
 			);
 			$args = array(
 				'labels'			  => $labels,
-				'description'         => __( 'This is where you can add new Slider', 'core' ),
+				'description'         => esc_html__( 'This is where you can add new Slider', 'law_core' ),
 				'public'              => true,
 				'supports'            => array( 'title' ),
 				'show_ui'             => true,
@@ -76,7 +76,7 @@ if( ! class_exists('XA_Slider') ) {
 		 */
 		public function sliders_columns_add($columns) {
 			unset($columns['date']);
-			$columns['shortcode'] 		= __('Shortcode','core');
+			$columns['shortcode'] 		= esc_html__('Shortcode','law_core');
 		 
   			return $columns;
 		}
@@ -87,16 +87,16 @@ if( ! class_exists('XA_Slider') ) {
 		 */
 		public function sliders_columns($name) {
 			global $post;
-			$xa_shortcode		= get_post_meta($post->ID,'xa_shortcode',true);
+			$law_shortcode		= get_post_meta($post->ID,'law_shortcode',true);
 			
 			switch ($name) {
 				case 'shortcode':
-					echo XA_CoreBase::xa_esc_specialchars( $xa_shortcode ).__('  Note: Add this shortcode to wp editor or any where in code as do_shortcode("[xaraar_slider id="'.$post->ID	.'"]") ','core');
+					echo ( $law_shortcode ).esc_html__('  Note: Add this shortcode to wp editor or any where in code as do_shortcode("[themeheap_slider id="'.$post->ID	.'"]") ','law_core');
 				break;		
 				
 			}
 		}
 	}
 	
-  	new XA_Slider();	
+  	new Law_Slider();	
 }
