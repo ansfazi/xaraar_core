@@ -7,7 +7,7 @@
  * @author    themeheap
  * @link      http://themeheap.com/
  * @copyright @2015 themeheap
- * @version 1.0.0
+ 
  * @since 1.0
  */
 if( ! class_exists('Law_Slider') ) {

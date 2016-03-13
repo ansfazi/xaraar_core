@@ -1,0 +1,511 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Law Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Sun Mar 13 2016 06:19:36 GMT-0700 (Pacific Daylight Time)\n"
+"PO-Revision-Date: Sun Mar 13 2016 06:19:39 GMT-0700 (Pacific Daylight Time)\n"
+"Last-Translator: admin <Aamirshahzad22009@live.com>\n"
+"Language-Team: \n"
+"Language: English\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: en_US\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "Law Core"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://themeheap.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "Themeheap Framework for custom posts and customization"
+msgstr ""
+
+#. Author of the plugin
+msgid "themeheape"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://themeforest.net/user/themeheap"
+msgstr ""
+
+#: ../core/post-types/events.php:48 ../core/post-types/events.php:49 ../core/post-
+#: types/events.php:50
+msgid "Events"
+msgstr ""
+
+#: ../core/post-types/events.php:51
+msgid "Add Event"
+msgstr ""
+
+#: ../core/post-types/events.php:52
+msgid "Add New Event"
+msgstr ""
+
+#: ../core/post-types/events.php:53 ../core/post-types/practice.php:51 ..
+#: /core/post-types/sliders.php:43 ../core/post-types/teams.php:53
+msgid "Edit"
+msgstr ""
+
+#: ../core/post-types/events.php:54
+msgid "Edit Event"
+msgstr ""
+
+#: ../core/post-types/events.php:55
+msgid "New Event"
+msgstr ""
+
+#: ../core/post-types/events.php:56 ../core/post-types/events.php:57
+msgid "View Event"
+msgstr ""
+
+#: ../core/post-types/events.php:58
+msgid "Search Event"
+msgstr ""
+
+#: ../core/post-types/events.php:59
+msgid "No Event found"
+msgstr ""
+
+#: ../core/post-types/events.php:60
+msgid "No Event found in trash"
+msgstr ""
+
+#: ../core/post-types/events.php:61
+msgid "Parent Event"
+msgstr ""
+
+#: ../core/post-types/events.php:65
+msgid "This is where you can add new Event"
+msgstr ""
+
+#: ../core/post-types/events.php:88 ../core/post-types/practice.php:86 ..
+#: /core/post-types/teams.php:88
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: ../core/post-types/events.php:89 ../core/post-types/practice.php:87 ..
+#: /core/post-types/teams.php:89
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: ../core/post-types/events.php:90 ../core/post-types/practice.php:88 ..
+#: /core/post-types/teams.php:90
+msgid "Search Categories"
+msgstr ""
+
+#: ../core/post-types/events.php:91 ../core/post-types/practice.php:89 ..
+#: /core/post-types/teams.php:91
+msgid "All Categories"
+msgstr ""
+
+#: ../core/post-types/events.php:92 ../core/post-types/practice.php:90 ..
+#: /core/post-types/teams.php:92
+msgid "Parent Category"
+msgstr ""
+
+#: ../core/post-types/events.php:93 ../core/post-types/practice.php:91 ..
+#: /core/post-types/teams.php:93
+msgid "Parent Category:"
+msgstr ""
+
+#: ../core/post-types/events.php:94 ../core/post-types/practice.php:92 ..
+#: /core/post-types/teams.php:94
+msgid "Edit Category"
+msgstr ""
+
+#: ../core/post-types/events.php:95 ../core/post-types/practice.php:93 ..
+#: /core/post-types/teams.php:95
+msgid "Update Category"
+msgstr ""
+
+#: ../core/post-types/events.php:96 ../core/post-types/practice.php:94 ..
+#: /core/post-types/teams.php:96
+msgid "Add New Category"
+msgstr ""
+
+#: ../core/post-types/events.php:97 ../core/post-types/practice.php:95 ..
+#: /core/post-types/teams.php:97
+msgid "New Category Name"
+msgstr ""
+
+#: ../core/post-types/events.php:98 ../core/post-types/practice.php:96 ..
+#: /core/post-types/teams.php:98
+msgid "Categories"
+msgstr ""
+
+#: ../core/post-types/events.php:119
+msgid "Location"
+msgstr ""
+
+#: ../core/post-types/events.php:120
+msgid "Start Date / End Date"
+msgstr ""
+
+#: ../core/post-types/practice.php:46 ../core/post-types/practice.php:47 ..
+#: /core/post-types/practice.php:48
+msgid "Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:49
+msgid "Add Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:50
+msgid "Add New Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:52
+msgid "Edit Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:53
+msgid "New Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:54 ../core/post-types/practice.php:55
+msgid "View Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:56
+msgid "Search Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:57
+msgid "No Practice found"
+msgstr ""
+
+#: ../core/post-types/practice.php:58
+msgid "No Practice found in trash"
+msgstr ""
+
+#: ../core/post-types/practice.php:59
+msgid "Parent Practice"
+msgstr ""
+
+#: ../core/post-types/practice.php:63
+msgid "This is where you can add new Practice"
+msgstr ""
+
+#: ../core/post-types/sliders.php:38 ../core/post-types/sliders.php:39 ..
+#: /core/post-types/sliders.php:40
+msgid "Sliders"
+msgstr ""
+
+#: ../core/post-types/sliders.php:41
+msgid "Add Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:42
+msgid "Add New Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:44
+msgid "Edit Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:45
+msgid "New Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:46 ../core/post-types/sliders.php:47
+msgid "View Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:48
+msgid "Search Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:49
+msgid "No Slider found"
+msgstr ""
+
+#: ../core/post-types/sliders.php:50
+msgid "No Slider found in trash"
+msgstr ""
+
+#: ../core/post-types/sliders.php:51
+msgid "Parent Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:55
+msgid "This is where you can add new Slider"
+msgstr ""
+
+#: ../core/post-types/sliders.php:79
+msgid "Shortcode"
+msgstr ""
+
+#: ../core/post-types/teams.php:48 ../core/post-types/teams.php:49 ../core/post-
+#: types/teams.php:50
+msgid "Teams"
+msgstr ""
+
+#: ../core/post-types/teams.php:51
+msgid "Add Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:52
+msgid "Add New Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:54
+msgid "Edit Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:55
+msgid "New Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:56 ../core/post-types/teams.php:57
+msgid "View Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:58
+msgid "Search Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:59
+msgid "No Team found"
+msgstr ""
+
+#: ../core/post-types/teams.php:60
+msgid "No Team found in trash"
+msgstr ""
+
+#: ../core/post-types/teams.php:61
+msgid "Parent Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:65
+msgid "This is where you can add new Team"
+msgstr ""
+
+#: ../core/post-types/teams.php:119 ../templates/teams-single.php:152
+msgid "Email"
+msgstr ""
+
+#: ../core/post-types/teams.php:120
+msgid "Phone"
+msgstr ""
+
+#: ../hooks/hooks.php:27 ../hooks/hooks.php:124 ../hooks/hooks.php:232
+msgid "Oops! No kiddies Please."
+msgstr ""
+
+#: ../hooks/hooks.php:35 ../hooks/hooks.php:135 ../hooks/hooks.php:240
+msgid "Message Sent."
+msgstr ""
+
+#: ../hooks/hooks.php:36 ../hooks/hooks.php:140 ../hooks/hooks.php:241
+msgid "Message Fail."
+msgstr ""
+
+#: ../hooks/hooks.php:49 ../hooks/hooks.php:153 ../hooks/hooks.php:251
+msgid "Please fill all fields."
+msgstr ""
+
+#: ../hooks/hooks.php:56 ../hooks/hooks.php:160
+msgid "Email address is not valid."
+msgstr ""
+
+#: ../hooks/hooks.php:335 ../hooks/hooks.php:384
+msgid "User name should not be empty."
+msgstr ""
+
+#: ../hooks/hooks.php:341
+msgid "Password should not be empty."
+msgstr ""
+
+#: ../hooks/hooks.php:349
+msgid "Wrong username or password."
+msgstr ""
+
+#: ../hooks/hooks.php:355
+msgid "Successfully Login"
+msgstr ""
+
+#: ../hooks/hooks.php:391
+msgid "Please Check Terms and Conditions"
+msgstr ""
+
+#: ../hooks/hooks.php:398
+msgid "Password is required."
+msgstr ""
+
+#: ../hooks/hooks.php:405
+msgid "Password is not matched."
+msgstr ""
+
+#: ../hooks/hooks.php:413
+msgid "Email should not be empty."
+msgstr ""
+
+#: ../hooks/hooks.php:421
+msgid "Please enter a valid email."
+msgstr ""
+
+#: ../hooks/hooks.php:432
+msgid "User already exists. Please try another one."
+msgstr ""
+
+#: ../hooks/hooks.php:449
+msgid "Please check your email for login details."
+msgstr ""
+
+#: ../hooks/hooks.php:470
+#, php-format
+msgid "New user registration on your site %s:"
+msgstr ""
+
+#: ../hooks/hooks.php:471 ../hooks/hooks.php:479
+#, php-format
+msgid "Username: %s"
+msgstr ""
+
+#: ../hooks/hooks.php:472
+#, php-format
+msgid "E-mail: %s"
+msgstr ""
+
+#: ../hooks/hooks.php:474
+#, php-format
+msgid "[%s] New User Registration"
+msgstr ""
+
+#: ../hooks/hooks.php:480
+#, php-format
+msgid "Password: %s"
+msgstr ""
+
+#: ../hooks/hooks.php:483
+#, php-format
+msgid "[%s] Your username and password"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:22
+msgid "LOGIN FORM"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:28 ../shortcodes/class-registration.php:59
+msgid "Username"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:32 ../shortcodes/class-registration.php:62
+msgid "Password"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:37
+msgid "Remember?"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:40
+msgid "Forgot Password"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:45
+msgid "login"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:48
+msgid "Not a Member?"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:48 ../shortcodes/class-registration.php:81
+msgid "Sign Up"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:54
+msgid "SIGN UP"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:65
+msgid "Confirm Password"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:68
+msgid "Email Address"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:71
+msgid "First Name"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:74
+msgid "Last Name"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:78
+msgid " I agree with the terms and conditions"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:84
+msgid "Already Member?"
+msgstr ""
+
+#: ../shortcodes/class-registration.php:84
+msgid "Sign In"
+msgstr ""
+
+#: ../shortcodes/class-slider.php:22
+msgid "Oops! No data Found"
+msgstr ""
+
+#: ../templates/events-single.php:88
+msgid "Approx Time:"
+msgstr ""
+
+#: ../templates/events-single.php:99 ../templates/practice-single.php:70
+msgid " Written by "
+msgstr ""
+
+#: ../templates/events-single.php:100
+msgid " Comments"
+msgstr ""
+
+#: ../templates/events-single.php:106
+msgid "Organizers:"
+msgstr ""
+
+#: ../templates/events-single.php:151
+msgid "Share This Event"
+msgstr ""
+
+#: ../templates/teams-single.php:114
+msgid "Education"
+msgstr ""
+
+#: ../templates/teams-single.php:141
+msgid "Contact Me"
+msgstr ""
+
+#: ../templates/teams-single.php:148
+msgid "Name"
+msgstr ""
+
+#: ../templates/teams-single.php:156
+msgid "Subject"
+msgstr ""
+
+#: ../templates/teams-single.php:162
+msgid "Comment..."
+msgstr ""
+
+#: ../templates/teams-single.php:166
+msgid "Submit"
+msgstr ""
