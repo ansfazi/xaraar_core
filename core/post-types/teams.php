@@ -73,7 +73,7 @@ if (!class_exists('Law_Teams')) {
                                'hierarchical'        => false ,
                                'menu_position'       => 8 ,
                                'rewrite'             => array ('slug' => $law_teams_slug , 'with_front' => true) ,
-                               'query_var'           => false ,
+                               'query_var'           => true ,
                                'has_archive'         => 'false' ,
             );
             register_post_type('law_teams' , $args);
