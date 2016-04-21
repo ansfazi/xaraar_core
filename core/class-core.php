@@ -65,11 +65,14 @@ if (!class_exists('Law_CoreBase')) {
                     foreach ($_POST['fw_options'] as $key => $value) {
                         if ($key == 'start_date') {
                             $value = date('Y-m-d' , strtotime($value));
+							update_post_meta($post_id , $key.'_string' , strtotime( $value ) ); //
                         } else if ($key == 'end_date') {
                             $value = date('Y-m-d' , strtotime($value));
+							update_post_meta($post_id , $key.'_string' ,  strtotime( $value ) ); //
                         }
-
+						
                         update_post_meta($post_id , $key , $value); //exit;
+						
                     }
                 }
             }

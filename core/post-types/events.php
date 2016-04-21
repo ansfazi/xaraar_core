@@ -45,20 +45,20 @@ if (!class_exists('Law_Events')) {
 			}
 			
             $labels = array (
-                               'name'               => __('Events' , 'law-firm') ,
-                               'all_items'          => __('Events' , 'law-firm') ,
-                               'singular_name'      => __('Events' , 'law-firm') ,
-                               'add_new'            => __('Add Event' , 'law-firm') ,
-                               'add_new_item'       => __('Add New Event' , 'law-firm') ,
-                               'edit'               => __('Edit' , 'law-firm') ,
-                               'edit_item'          => __('Edit Event' , 'law-firm') ,
-                               'new_item'           => __('New Event' , 'law-firm') ,
-                               'view'               => __('View Event' , 'law-firm') ,
-                               'view_item'          => __('View Event' , 'law-firm') ,
-                               'search_items'       => __('Search Event' , 'law-firm') ,
-                               'not_found'          => __('No Event found' , 'law-firm') ,
-                               'not_found_in_trash' => __('No Event found in trash' , 'law-firm') ,
-                               'parent'             => __('Parent Event' , 'law-firm') ,
+                               'name'               => esc_html__('Events' , 'law-firm') ,
+                               'all_items'          => esc_html__('Events' , 'law-firm') ,
+                               'singular_name'      => esc_html__('Events' , 'law-firm') ,
+                               'add_new'            => esc_html__('Add Event' , 'law-firm') ,
+                               'add_new_item'       => esc_html__('Add New Event' , 'law-firm') ,
+                               'edit'               => esc_html__('Edit' , 'law-firm') ,
+                               'edit_item'          => esc_html__('Edit Event' , 'law-firm') ,
+                               'new_item'           => esc_html__('New Event' , 'law-firm') ,
+                               'view'               => esc_html__('View Event' , 'law-firm') ,
+                               'view_item'          => esc_html__('View Event' , 'law-firm') ,
+                               'search_items'       => esc_html__('Search Event' , 'law-firm') ,
+                               'not_found'          => esc_html__('No Event found' , 'law-firm') ,
+                               'not_found_in_trash' => esc_html__('No Event found in trash' , 'law-firm') ,
+                               'parent'             => esc_html__('Parent Event' , 'law-firm') ,
             );
             $args   = array (
                                'labels'              => $labels ,
@@ -107,7 +107,7 @@ if (!class_exists('Law_Events')) {
                                'rewrite'           => array ('slug' => 'categories') ,
             );
 
-            register_taxonomy('event_categories' , array ('law_events') , $args);
+            register_taxonomy('event_categories' , array ('law_events','post') , $args);
         }
 
         /**

@@ -96,7 +96,6 @@ if (!function_exists('law_firm_contact_me')) {
         } else {
             // Not a POST request, set a 403 (forbidden) response code.
             // http_response_code(403);
-            echo
             $json['type']    = "error";
             $json['message'] = esc_attr($failure_message);
             echo json_encode($json);
