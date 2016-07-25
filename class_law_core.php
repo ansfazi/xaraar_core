@@ -4,7 +4,7 @@ defined('ABSPATH') or die('No script kiddies please!');
   Plugin Name: Law Core
   Plugin URI: http://themeheap.com/
   Description: Themeheap Framework for custom posts and customization
-  Version: 1.3
+  Version: 1.9
   Author: themeheape
   Author URI: http://themeforest.net/user/themeheap
   License: GPL2
@@ -108,19 +108,12 @@ if (!class_exists('Law_Core')) {
             global $post;
             $single_path = dirname(__FILE__);
 
-			if (get_post_type() == 'law_events') {
+			if (get_post_type() == 'post_type') {
                 if (is_single()) {
-                    $single_template = plugin_dir_path(__FILE__) . '/templates/events-single.php';
-                }
-            } else if (get_post_type() == 'law_teams') {
-                if (is_single()) {
-                    $single_template = plugin_dir_path(__FILE__) . '/templates/teams-single.php';
-                }
-            }  else if (get_post_type() == 'practice') {
-                if (is_single()) {
-                    $single_template = plugin_dir_path(__FILE__) . '/templates/practice-single.php';
+                    //$single_template = plugin_dir_path(__FILE__) . '/templates/template.php';
                 }
             }
+			
             return $single_template;
         }
 

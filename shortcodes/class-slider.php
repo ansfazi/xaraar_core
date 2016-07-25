@@ -269,7 +269,6 @@ if (!class_exists('SC_Law_Firm_Slider')) {
             $flag 		  = fw_unique_increment();
             
 			law_firm_enqueue_slick_library();
-			//fw_print($slider_type);
 			$autoPlay	= 'true';
 			if( isset( $auto ) && $auto == 'disable' ) {
 			 	 $autoPlay	= 'false';
@@ -335,7 +334,8 @@ if (!class_exists('SC_Law_Firm_Slider')) {
 							speed: 300,
 							fade: true,
 							arrow: false,
-							cssEase: 'linear'   
+							cssEase: 'linear',
+							adaptiveHeight: true   
 						});
 					});  
 				</script>
@@ -432,6 +432,7 @@ if (!class_exists('SC_Law_Firm_Slider')) {
 							speed: 300,
 							fade: true,
 							arrow: false,
+							adaptiveHeight: true,
 							cssEase: 'linear'   
 						});
 					});  
