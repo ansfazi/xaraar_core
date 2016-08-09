@@ -176,6 +176,7 @@ if (!function_exists('law_firm_submit_contact')) {
             $email_content .= "Email: $email\n\n";
             $email_content .= "Website: $usersubject\n\n";
             $email_content .= "Message:\n$message\n";
+            $email_content .= 'Sent from: '.$_SERVER['SERVER_NAME'];
 
             if (isset($_POST['phone']) && !empty($_POST['phone'])) {
                 $phone = $_POST['phone'];
