@@ -4,8 +4,8 @@ defined('ABSPATH') or die('No script kiddies please!');
   Plugin Name: Law Core
   Plugin URI: http://themeheap.com/
   Description: Themeheap Framework for custom posts and customization
-  Version: 1.9
-  Author: themeheape
+  Version: 2.0
+  Author: themeheap
   Author URI: http://themeforest.net/user/themeheap
   License: GPL2
  */
